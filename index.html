@@ -7,19 +7,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>My Beginner JS Projects</h1>
-    <p class="description">Hi, I am <b>Christian Mundal</b> ! These are some beginner JavaScript projects I've built to practice my skills.</p>
+    <h1>My JS Projects</h1>
+    <p class="description">Hi, I am <b>Christian Mundal</b> ! These are JavaScript projects I've built to practice my skills.</p>
     <div class="projects-container" id="projectsContainer"></div>
 
     <script>
+        let type = {
+            0: 'beginner',
+            1: 'intermediate',
+            2: 'advanced'
+        }
+
         // Define your projects here
         const beginnerProjects = [
-            { name: 'TodoList', path: './TodoList/', description: 'A simple todo list application' },
-            { name: 'Calculator', path: './Calculator/', description: 'A basic calculator app' },
-            { name: 'Weather App', path: './WeatherApp/', description: 'Weather forecast application' },
-            { name: 'Simple E-Commerce', path: './SimpleE-Commerce/', description: 'A simple e-commerce application' },
-            { name: 'Simple Quiz App', path: './SimpleQuizApp/', description: 'A simple quiz application' },
-            { name: 'Expense Tracker', path: './ExpenseTracker/', description: 'A simple expense tracker application' },
+            { name: 'TodoList', path: './Beginner/TodoList/', description: 'A simple todo list application', type: type[0] },
+            { name: 'Calculator', path: './Beginner/Calculator/', description: 'A basic calculator app', type: type[0] },
+            { name: 'Weather App', path: './Beginner/WeatherApp/', description: 'Weather forecast application', type: type[0] },
+            { name: 'Simple E-Commerce', path: './Beginner/SimpleE-Commerce/', description: 'A simple e-commerce application', type: type[0] },
+            { name: 'Simple Quiz App', path: './Beginner/SimpleQuizApp/', description: 'A simple quiz application', type: type[0] },
+            { name: 'Expense Tracker', path: './Beginner/ExpenseTracker/', description: 'A simple expense tracker application', type: type[0] },
         ];
 
         const container = document.getElementById('projectsContainer');
@@ -30,6 +36,7 @@
             card.innerHTML = `
                 <h2>${project.name}</h2>
                 <p>${project.description}</p>
+                <span class="project-type">${project.type}</span>
             `;
             container.appendChild(card);
         });
